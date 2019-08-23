@@ -1,0 +1,10 @@
+{
+  "id" : "Caroline",
+  "city": {
+    "name": "Leeds",
+    "coordinates" : {
+      "lat": 53.801277,
+      "lon": -1.548567
+    }
+  }
+}

@@ -1,0 +1,10 @@
+FROM openjdk:8-jre-alpine
+
+ADD build/libs/*.jar /build/app.jar
+ADD run/example-database/ /db/
+ARG DOptions=""
+
+RUN echo "export IN_FILE_MATCHES_REPOSITORY_PATH=file:///db/matches/ && export IN_FILE_PROFILES_REPOSITORY_PATH=file:///db/profiles/ && java -Dspring.profiles.active=prod ${DOptions} -jar /build/app.jar" >> /build/entrypoint.sh
+RUN chmod 777 /build/entrypoint.sh
+
+CMD ["sh", "-c", "/build/entrypoint.sh"]

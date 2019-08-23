@@ -1,0 +1,22 @@
+version: '3.6'
+
+services:
+  web:
+    image: lucasventurasc/filtering-matches-web:0.1.0
+    ports:
+    - 10788:80
+    environment:
+    - BASE_SERVER_URL=${SERVER_URL}
+
+  backend:
+    image: lucasventurasc/filtering-matches:0.1.0
+    ports:
+    - 10789:8082
+    volumes:
+      - ./example-database/:/db/:rw
+      - ./example-database/:/db/:rw
+    environment:
+    - PORT=8082
+    - IN_FILE_MATCHES_REPOSITORY_PATH=file:///db/matches
+    - IN_FILE_PROFILES_REPOSITORY_PATH=file:///db/profiles
+    command: java -jar -Xmx256m -Dspring.profiles.active=prod /build/app.jar

@@ -1,0 +1,18 @@
+[
+    {
+      "display_name": "Caroline",
+      "age": 41,
+      "job_title": "Corporate Lawyer",
+      "height_in_cm": 153,
+      "city": {
+        "name": "Leeds",
+        "lat": 53.801277,
+        "lon": -1.548567
+      },
+      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "compatibility_score": 0.76,
+      "contacts_exchanged": 2,
+      "favourite": true,
+      "religion": "Atheist"
+    }
+]
